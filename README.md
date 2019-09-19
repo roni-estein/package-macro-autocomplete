@@ -44,10 +44,15 @@ When you are ready to import all the organized macros in your package, simply ru
 This will read `AutoCompletionHelper.php` files in each of the required packages and create a _package_macro_ide_helper.php file in your root directory with all the macros listed.
 PHPStorm will index that file and add the listed macro signatures to autocomplete.
 
-`autocomplete:generate` takes one optional parameter that is the file name, however it will add on the php extension. If you want something other that the _package_macro_ide_helper.php, run `php artisan autocomplete:generate MyAAwesomeFilename` and MyAwesomeFilename.php will be added to the root of your project for PHPStorm to consume.
+`autocomplete:generate` takes one optional parameter that is the file name, however it will add on the php extension. If you want something other that the _package_macro_ide_helper.php, run
+ 
+`php artisan autocomplete:generate MyAwesomeFilename` 
+
+and MyAwesomeFilename.php will be added to the root of your project for PHPStorm to consume.
 
 To make this part of your build, add the command to your composer.json after barryvdh/laravel-ide-helper update scripts.
 
+```
 "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -57,3 +62,4 @@ To make this part of your build, add the command to your composer.json after bar
             "@php artisan autocomplete:generate"
         ],
 
+``
