@@ -1,0 +1,30 @@
+{
+    "name": "roniestein/package-macro-autocomplete",
+    "description": "A helper package that allows barryvdh/laravel-ide-helper find and index macros stored in packages ",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roni Estein",
+            "email": "roni.estein@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelCommands\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.1-dev"
+        },
+        "laravel": {
+            "providers": [
+                "PackageMacroAutocomplete\\ServiceProvider"
+            ]
+        }
+    }
+}
