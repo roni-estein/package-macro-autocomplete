@@ -3,10 +3,6 @@
 namespace LaravelCommands\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\View\FileViewFinder;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
 /**
  * A command to generate autocomplete information for your IDE
@@ -41,12 +37,12 @@ class AutoCompleteCommand extends Command
         }
         
         
-        $this->file_force_contents(base_path('ide/'.$this->argument('name').'.php'),
+        $this->file_force_contents(base_path($this->argument('name').'.php'),
             "<?php\n".str_ireplace(["<?php\n","<?php", "?>\n","?>"],"",$combined)
         );
         
         $this->info('Generating ...');
-        $this->info('ide/'.$this->argument('name').'.php ........ OK');
+        $this->info($this->argument('name').'.php ........ OK');
 
     }
     
