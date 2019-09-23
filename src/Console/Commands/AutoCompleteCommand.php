@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelCommands\Console\Commands;
+namespace PackageMacroAutocomplete\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -32,7 +32,7 @@ class AutoCompleteCommand extends Command
     public function handle()
     {
         $combined = '';
-        foreach(glob(base_path('vendor').'/**/**/src/AutoCompletionHelper.php') as $filename){
+        foreach(glob(base_path('vendor').'/**/**/AutoCompletionHelper.php') as $filename){
             $combined .=file_get_contents($filename);
         }
         

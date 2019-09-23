@@ -1,13 +1,8 @@
 <?php
 
-namespace LaravelCommands;
+namespace PackageMacroAutocomplete;
 
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\View\Factory as ViewFactory;
-use Illuminate\Foundation\Console\PresetCommand;
-use Illuminate\View\FileViewFinder;
 
 class ServiceProvider extends BaseServiceProvider {
 
@@ -15,7 +10,7 @@ class ServiceProvider extends BaseServiceProvider {
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \LaravelCommands\Console\Commands\AutoCompleteCommand::class,
+                \PackageMacroAutocomplete\Console\Commands\AutoCompleteCommand::class,
             ]);
 
         }
